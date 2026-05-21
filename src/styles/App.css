@@ -1,0 +1,163 @@
+/* Header Styles */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #007bff;
+  color: white;
+  margin-bottom: 2rem;
+}
+
+.header__brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+.header__brand:hover {
+  opacity: 0.9;
+}
+
+.header__nav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.header__nav a {
+  color: white;
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+
+.header__nav a:hover {
+  opacity: 0.8;
+}
+
+/* Main Content */
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Home Page Styles */
+
+.home {
+  padding: 2rem 0;
+}
+
+.search-bar {
+  margin-bottom: 2rem;
+}
+
+.search-bar__input {
+  width: 100%;
+  max-width: 480px;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.search-bar__input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+.home__placeholder {
+  color: #999;
+  margin-top: 1rem;
+  font-style: italic;
+}
+
+/* Country Card Styles */
+
+.country-card {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 1.5rem;
+  background: white;
+  margin-bottom: 1rem;
+}
+
+.country-card h3 {
+  margin-top: 0;
+  color: #007bff;
+}
+
+/* Filter Bar */
+
+.filter-bar {
+  margin-bottom: 2rem;
+}
+
+.filter-bar select {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+/* 404 Page */
+
+.not-found {
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.not-found h2 {
+  color: #e74c3c;
+  font-size: 2rem;
+}
+
+.not-found a {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.not-found a:hover {
+  background-color: #0056b3;
+}
+
+/* Loading Spinner */
+
+.loader {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 2rem auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Favourites Page */
+
+.favourites {
+  padding: 2rem 0;
+}
+
+/* Country Page */
+
+.country-page {
+  padding: 2rem 0;
+}
