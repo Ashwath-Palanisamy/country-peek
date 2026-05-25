@@ -27,7 +27,7 @@ function Home() {
 
     let isActive = true
     const controller = new AbortController()
-    const timer = setTimeout(async () => {
+    const fetchCountries = async () => {
       if (!isActive) {
         return
       }
@@ -65,6 +65,9 @@ function Home() {
           setLoading(false)
         }
       }
+    }
+    const timer = setTimeout(() => {
+      void fetchCountries()
     }, 400)
 
     return () => {

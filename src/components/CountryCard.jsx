@@ -1,5 +1,8 @@
 import { Link } from 'react-router-dom'
 
+const FALLBACK_FLAG =
+  'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=='
+
 function CountryCard({ country }) {
   const { name, flags, population, region, capital, cca3 } = country
 
@@ -10,7 +13,9 @@ function CountryCard({ country }) {
         alt={`Flag of ${name?.common ?? 'country'}`}
         className="card__flag"
         onError={(event) => {
-          event.currentTarget.style.display = 'none'
+          event.currentTarget.onerror = null
+          event.currentTarget.src = FALLBACK_FLAG
+          event.currentTarget.alt = `Flag unavailable for ${name?.common ?? 'this country'}`
         }}
       />
       <div className="card__body">
