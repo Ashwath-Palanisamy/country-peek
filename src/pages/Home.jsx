@@ -61,7 +61,7 @@ function Home() {
           setError('No countries found.')
         }
       } finally {
-        if (isActive && !controller.signal.aborted) {
+        if (isActive) {
           setLoading(false)
         }
       }

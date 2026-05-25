@@ -9,6 +9,9 @@ function CountryCard({ country }) {
         src={flags?.svg}
         alt={`Flag of ${name?.common ?? 'country'}`}
         className="card__flag"
+        onError={(event) => {
+          event.currentTarget.style.display = 'none'
+        }}
       />
       <div className="card__body">
         <h3 className="card__name">{name?.common ?? 'Unknown country'}</h3>
