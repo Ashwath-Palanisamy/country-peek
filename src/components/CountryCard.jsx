@@ -7,7 +7,7 @@ function CountryCard({ country }) {
     <Link to={`/country/${cca3}`} className="card">
       <img
         src={flags?.svg}
-        alt={`${name?.common ?? 'Country'} flag`}
+        alt={`Flag of ${name?.common ?? 'country'}`}
         className="card__flag"
       />
       <div className="card__body">

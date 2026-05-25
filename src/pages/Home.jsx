@@ -25,8 +25,13 @@ function Home() {
       return
     }
 
+    let isActive = true
     const controller = new AbortController()
     const timer = setTimeout(async () => {
+      if (!isActive) {
+        return
+      }
+
       setLoading(true)
       setCountries([])
       setError(null)
@@ -42,22 +47,28 @@ function Home() {
         }
 
         const data = await response.json()
-        setCountries(data)
+
+        if (isActive) {
+          setCountries(data)
+        }
       } catch (fetchError) {
         if (fetchError.name === 'AbortError') {
           return
         }
 
-        setCountries([])
-        setError('No countries found.')
+        if (isActive) {
+          setCountries([])
+          setError('No countries found.')
+        }
       } finally {
-        if (!controller.signal.aborted) {
+        if (isActive && !controller.signal.aborted) {
           setLoading(false)
         }
       }
     }, 400)
 
     return () => {
+      isActive = false
       clearTimeout(timer)
       controller.abort()
     }
