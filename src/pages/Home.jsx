@@ -8,13 +8,20 @@ function Home() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
 
+  const handleQueryChange = (nextQuery) => {
+    setQuery(nextQuery)
+
+    if (!nextQuery.trim()) {
+      setCountries([])
+      setError(null)
+      setLoading(false)
+    }
+  }
+
   useEffect(() => {
     const trimmedQuery = query.trim()
 
     if (!trimmedQuery) {
-      setCountries([])
-      setError(null)
-      setLoading(false)
       return
     }
 
@@ -58,7 +65,7 @@ function Home() {
 
   return (
     <div className="home">
-      <SearchBar query={query} onQueryChange={setQuery} />
+      <SearchBar query={query} onQueryChange={handleQueryChange} />
       {!query.trim() && (
         <p className="home__status">Start searching to explore countries.</p>
       )}
